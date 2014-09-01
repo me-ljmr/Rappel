@@ -1,0 +1,6 @@
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\WpfApplication1\ConnectionParam\bin\Debug\ConnectionParam.dll
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\WpfApplication1\ConnectionParam\bin\Debug\ConnectionParam.pdb
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\WpfApplication1\ConnectionParam\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\WpfApplication1\ConnectionParam\obj\Debug\ConnectionParam.dll
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\WpfApplication1\ConnectionParam\obj\Debug\ConnectionParam.pdb
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\WpfApplication1\ConnectionParam\bin\Debug\ConnectionParam.dll.config

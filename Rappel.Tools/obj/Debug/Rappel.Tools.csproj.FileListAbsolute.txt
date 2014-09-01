@@ -1,0 +1,5 @@
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\Rappel\Rappel.Tools\bin\Debug\Rappel.Tools.dll
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\Rappel\Rappel.Tools\bin\Debug\Rappel.Tools.pdb
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\Rappel\Rappel.Tools\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\Rappel\Rappel.Tools\obj\Debug\Rappel.Tools.dll
+C:\Users\Luja Manandhar\Documents\Visual Studio 2010\Projects\Rappel\Rappel.Tools\obj\Debug\Rappel.Tools.pdb

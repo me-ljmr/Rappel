@@ -1,0 +1,70 @@
+﻿<Window x:Class="RemindKitty.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Remind Kitty" Height="755" Width="529" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        
+       
+        <Style x:Key="SmallLettersStyle">
+            <Setter Property="Control.FontSize" Value="10" />
+            <Setter Property="Control.FontWeight" Value="Normal" />
+            <Setter Property="Control.BorderThickness" Value="1" />
+        </Style>
+
+        <DataTemplate x:Key="reminderlisttemplate" >
+            <StackPanel Margin="3" Orientation="Vertical">
+                
+                <TextBlock Name="remtitle" Text ="{Binding RemTitle}" DataContext="{Binding}"></TextBlock>
+                <TextBlock Text="{Binding RemGroupID}" Visibility="Collapsed" ></TextBlock>
+                <TextBlock Text="{Binding GroupType}" Visibility="Collapsed" ></TextBlock>
+                <TextBlock Text="{Binding sType}" Visibility="Collapsed" ></TextBlock>
+            </StackPanel>
+            
+        </DataTemplate>
+        <DataTemplate x:Key="tasklisttemplate">
+            <StackPanel Margin="3" Orientation="Vertical">
+                <TextBlock Text="{Binding TaskTitle}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid Background="#FF585858" Height="705" Width="507">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="194" />
+            <ColumnDefinition Width="266*" />
+            <ColumnDefinition Width="12*" />
+        </Grid.ColumnDefinitions>
+        <Button Style="{StaticResource SmallLettersStyle}" Content="Edit" Height="27" HorizontalAlignment="Left" Margin="12,12,0,0" Name="cmdEditReminders" VerticalAlignment="Top" Width="69" Foreground="White" FontWeight="Bold" Background="#FF939393" BorderBrush="Black"></Button>
+        <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="169,13,0,0" Name="cmdAddReminders" VerticalAlignment="Top" Width="25" Background="#FFCBCBCB" BorderBrush="#FFC37FEB" />
+        <Calendar Height="173" HorizontalAlignment="Left" Margin="12,469,0,0" Name="calendar1" VerticalAlignment="Top" Width="182" />
+        <ListBox  ItemsSource="{Binding Path=TaskCollection}" Height="585" HorizontalAlignment="Left" Margin="18,49,0,0" Name="lstTasks" VerticalAlignment="Top" Width="266" Grid.Column="1" ItemTemplate="{StaticResource tasklisttemplate}">
+            <ListBox.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White"/>
+                <!--Selected color when the ListBox is focused-->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"  Color="Black" />
+                <!--Selected color when the ListBox is not focused-->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Gray" />
+            </ListBox.Resources>            
+        </ListBox>
+        <Button Content="Edit" Height="23" HorizontalAlignment="Left" Margin="234,13,0,0" Name="button1" VerticalAlignment="Top" Width="50" Background="White" BorderBrush="#FF656363" Grid.Column="1" />
+        <Label  Content="{Binding Path=RemTitle}" DataContext="{Binding ElementName=lstReminders, Path=SelectedItem}"  Height="32" HorizontalAlignment="Left" Margin="18,12,0,0"  Name="lblSelectedReminder" VerticalAlignment="Top" Width="201" Foreground="White" FontWeight="Bold" FontSize="15" Grid.Column="1" />
+        <ListBox Name="lstReminders" Background="#FF727272" Foreground="White" FontSize="13" ItemsSource="{Binding Path=ReminderCollection}" ItemTemplate="{StaticResource reminderlisttemplate}" Margin="12,49,0,558" SelectionChanged="lstReminders_SelectionChanged" HorizontalAlignment="Left" Width="182">
+            
+            <ListBox.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                <!--Selected color when the ListBox is focused-->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"  Color="White" />
+                <!--Selected color when the ListBox is not focused-->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Gray" />
+            </ListBox.Resources>
+
+        </ListBox>
+        <Button Content="Select an Action ▼" Height="23" HorizontalAlignment="Left" Margin="75,440,0,0" Name="btnAction" VerticalAlignment="Top" Width="119" FontSize="11" FontStyle="Italic" MouseDown="btnAction_MouseDown" MouseLeftButtonDown="btnAction_MouseLeftButtonDown" />
+        <ListBox Background="#FF727272" FontSize="13" Foreground="White" ItemTemplate="{StaticResource reminderlisttemplate}" ItemsSource="{Binding Path=ReminderCollection}" Margin="12,195,0,290" Name="listBox1">
+            <ListBox.Resources>
+                <SolidColorBrush Color="Black" x:Key="{x:Static SystemColors.HighlightTextBrushKey}" />
+                <SolidColorBrush Color="White" x:Key="{x:Static SystemColors.HighlightBrushKey}" />
+                <SolidColorBrush Color="Gray" x:Key="{x:Static SystemColors.ControlBrushKey}" />
+            </ListBox.Resources>
+        </ListBox>
+    </Grid>
+</Window>
